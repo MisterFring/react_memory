@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import './Card.css'
 
 const HIDDEN_SYMBOL = '❓'
@@ -11,5 +11,16 @@ const Card = ({ card, feedback, onClick}) => (
     </span>
 </div>
 )
+
+Card.propTypes = {
+    Card : PropTypes.string.isRequired,
+    feedback :PropTypes.oneOf([
+        'hidden', 
+        'visible',
+        'justMatched',
+        'justMismatched',
+    ]),
+    onClick : PropTypes.func.isRequired, 
+}
 
 export default Card
